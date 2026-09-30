@@ -12,8 +12,13 @@ const navItems = [
 export function BrandMark() {
   return (
     <Link to="/" className="brand-mark" aria-label="JN Snooker home">
-      <span className="brand-monogram">JN</span>
-      <span className="brand-name">SNOOKER</span>
+      <img
+        src="/images/jn-snooker-header-logo.png"
+        alt="JN Snooker — John Nicholson"
+        width="320"
+        height="180"
+        decoding="async"
+      />
     </Link>
   );
 }
