@@ -1,8 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Check, ChevronDown, Minus, Play } from "lucide-react";
+import { ArrowRight, Check, ChevronDown, Minus } from "lucide-react";
 import { ArrowLink, coachingAreas, Eyebrow, PageShell, processSteps } from "../components/site-shell";
 
-const hero = "/images/john-nicholson-hero.webp";
 const heroHd = "/images/jn-snooker-hero-hd.png";
 const logo = "/images/jn-snooker-logo.png";
 const portrait = "/images/john-nicholson-portrait.png";
@@ -54,7 +53,12 @@ const coachingValues = [
   ["Compete", "Carry your technique and decision-making into match conditions."],
 ];
 
-const faqs = [
+const tableStandards = [
+  ["01", "Cue trust", "A delivery you can rely on when the frame is tight and the table feels smaller."],
+  ["02", "Clear choices", "Better shot selection so you stop guessing and start playing with intent."],
+  ["03", "Match routines", "Simple habits that keep your technique and thinking steady under pressure."],
+];
+
   ["01", "Is this for competitive players?", "Yes. Sessions are built for players who want clearer technique, smarter decisions and a game that holds up when it matters."],
   ["02", "Can beginners still book?", "Absolutely. Coaching starts from where you are now — first principles through to match-ready habits."],
   ["03", "What should I bring?", "Your cue if you have one, and a clear idea of the part of your game you most want to improve."],
@@ -78,7 +82,30 @@ function HomePage() { return <PageShell>
   <section className="section session-outcomes"><div className="container"><div className="section-heading"><Eyebrow>Beyond the session</Eyebrow><h2>LEAVE WITH<br/>A CLEAR PLAN.</h2></div><div className="outcome-grid">{sessionOutcomes.map(([n,title,copy]) => <article key={n}><span>{n}</span><h3>{title}</h3><p>{copy}</p></article>)}</div></div></section>
   <section className="development-band"><div className="container"><div className="development-intro"><Eyebrow>The development cycle</Eyebrow><h2>FROM FIRST LOOK<br/>TO MATCH TABLE.</h2></div><div className="development-track">{coachingValues.map(([title,copy], index) => <article key={title}><span>{String(index + 1).padStart(2,"0")}</span><div><h3>{title}</h3><p>{copy}</p></div></article>)}</div></div></section>
   <section className="session-focus"><div className="container session-focus-grid"><div className="focus-visual"><div className="focus-visual-frame"><img src={logo} alt="JN Snooker — John Nicholson Snooker Coaching" width="900" height="600" loading="lazy" decoding="async"/></div></div><div className="focus-note"><Eyebrow>One table. One player. One plan.</Eyebrow><h2>COACHING<br/><span className="focus-hollow">WITHOUT</span><br/><span>THE NOISE.</span></h2><p>Every session is centred on the part of your game that will create the most useful change now.</p><ul className="focus-list"><li><span className="focus-check"><Check size={14} aria-hidden="true"/></span>Direct observation</li><li><span className="focus-check"><Check size={14} aria-hidden="true"/></span>Simple explanations</li><li><span className="focus-check"><Check size={14} aria-hidden="true"/></span>Repeatable routines</li></ul><span className="focus-rule" aria-hidden="true"/><ArrowLink to="/book-snooker-coaching">Book a session</ArrowLink></div></div></section>
-  <section className="media-feature"><div className="media-visual"><img src={hero} alt="Professional snooker coaching with John Nicholson" width="1440" height="480" loading="lazy" decoding="async"/><span className="play-button"><Play fill="currentColor"/></span></div><div className="media-copy"><Eyebrow>Coaching insights</Eyebrow><h2>SEE THE GAME<br/>DIFFERENTLY.</h2><p>Short coaching breakdowns, practice ideas and snooker insights can be added here as John's content library grows.</p><ArrowLink to="/snooker-insights" secondary>View coaching insights</ArrowLink></div></section>
+  <section className="table-standards" aria-labelledby="table-standards-heading">
+    <div className="container">
+      <div className="table-standards-head">
+        <div>
+          <Eyebrow>At the table</Eyebrow>
+          <h2 id="table-standards-heading">WHAT HOLDS UP<br/><span>UNDER PRESSURE.</span></h2>
+        </div>
+        <p>Coaching that prepares you for the moments that decide frames — not just neat practice on an empty table.</p>
+      </div>
+      <div className="table-standards-grid">
+        {tableStandards.map(([num, title, copy]) => (
+          <article key={num}>
+            <span>{num}</span>
+            <h3>{title}</h3>
+            <p>{copy}</p>
+          </article>
+        ))}
+      </div>
+      <div className="table-standards-action">
+        <ArrowLink to="/snooker-insights" secondary>Read coaching insights</ArrowLink>
+        <ArrowLink to="/book-snooker-coaching">Book a session</ArrowLink>
+      </div>
+    </div>
+  </section>
   <section className="championship-faq" aria-labelledby="championship-faq-heading">
     <div className="container championship-faq-grid">
       <div className="championship-faq-intro">
