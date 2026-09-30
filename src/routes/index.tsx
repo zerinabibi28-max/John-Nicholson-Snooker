@@ -59,6 +59,7 @@ const tableStandards = [
   ["03", "Match routines", "Simple habits that keep your technique and thinking steady under pressure."],
 ];
 
+const faqs = [
   ["01", "Is this for competitive players?", "Yes. Sessions are built for players who want clearer technique, smarter decisions and a game that holds up when it matters."],
   ["02", "Can beginners still book?", "Absolutely. Coaching starts from where you are now — first principles through to match-ready habits."],
   ["03", "What should I bring?", "Your cue if you have one, and a clear idea of the part of your game you most want to improve."],
