@@ -50,6 +50,18 @@ h2 { font-size: clamp(2.6rem,5vw,4.5rem); } h2 span,h1 span { color: var(--gold)
 .hero-action-bar>.container { min-height:92px; display:flex; align-items:center; justify-content:space-between; gap:2rem; }
 .hero-action-bar p { margin:0; color:var(--muted-foreground); font:600 .68rem var(--font-display); text-transform:uppercase; }
 .hero-action-bar>div>div { display:flex; flex-shrink:0; gap:.75rem; flex-wrap:wrap; }
+.hero-action-bar .button svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  transform: translateY(2px);
+  opacity: .85;
+  transition: transform .25s, opacity .25s;
+}
+.hero-action-bar .button:hover svg {
+  transform: translate(3px, 2px);
+  opacity: 1;
+}
 .hero-actions { display:flex; gap:.75rem; flex-wrap:wrap; }
 .section { padding: 9rem 0; }.section-raised { background:var(--card); }.section-heading { display:flex; justify-content:space-between; align-items:end; margin-bottom:4.5rem; }.section-heading .eyebrow { align-self:flex-start; }.section-heading.compact { margin-bottom:3rem; }
 .statement-grid { display:grid; grid-template-columns: minmax(0,1.4fr) minmax(0,.6fr); gap:8rem; align-items:end; }.statement-grid>* { min-width:0; }.statement-grid h2 { max-width:900px; }.rich-copy { color:var(--muted-foreground); font-size:1.08rem; }.rich-copy p { margin:0 0 1.3rem; }.text-link { display:inline-flex; align-items:center; gap:.6rem; color:var(--foreground); font:600 .72rem var(--font-display); text-transform:uppercase; border-bottom:1px solid var(--gold); padding-bottom:.4rem; }
