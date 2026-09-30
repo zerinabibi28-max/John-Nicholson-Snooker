@@ -282,27 +282,6 @@ h2 { font-size: clamp(2.6rem,5vw,4.5rem); } h2 span,h1 span { color: var(--gold)
   color: var(--muted-foreground);
   font-size: 1.05rem;
 }
-.championship-faq-mark {
-  margin-top: 3.5rem;
-  display: inline-flex;
-  flex-direction: column;
-  gap: .45rem;
-  padding: 1.1rem 1.35rem;
-  border: 1px solid color-mix(in oklab, var(--gold) 35%, transparent);
-  font-family: var(--font-display);
-  line-height: 1;
-}
-.championship-faq-mark span:first-child {
-  font-size: 1.65rem;
-  font-weight: 800;
-  letter-spacing: -.02em;
-}
-.championship-faq-mark span:last-child {
-  font-size: .58rem;
-  font-weight: 600;
-  letter-spacing: .28em;
-  color: var(--gold);
-}
 .championship-faq-list {
   display: flex;
   flex-direction: column;

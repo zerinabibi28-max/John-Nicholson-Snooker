@@ -130,10 +130,6 @@ function HomePage() { return <PageShell>
         <Eyebrow>Championship FAQ</Eyebrow>
         <h2 id="championship-faq-heading">ASKED AT<br/><span>THE TABLE.</span></h2>
         <p>Clear answers for players who take their game seriously — from first session through competitive play.</p>
-        <div className="championship-faq-mark" aria-hidden="true">
-          <span>JN</span>
-          <span>STANDARD</span>
-        </div>
       </div>
       <div className="championship-faq-list">
         {faqs.map(([num, question, answer], index) => (
