@@ -149,7 +149,6 @@ function HomePage() { return <PageShell>
       </div>
     </div>
   </section>
-  <section className="principle-strip"><div className="container"><p>Better habits</p><span aria-hidden="true"/><p>Smarter choices</p><span aria-hidden="true"/><p>Stronger match play</p></div></section>
   <section className="section location-section"><div className="container statement-grid"><div><Eyebrow>North East England</Eyebrow><h2>SNOOKER COACHING<br/><span>IN DARLINGTON.</span></h2></div><div className="rich-copy"><p>One-to-one snooker coaching for players in Darlington, County Durham and surrounding areas across the North East.</p><div className="location-links"><span>Darlington</span><span>County Durham</span><span>North East England</span></div></div></div></section>
   <section className="final-cta final-cta-framed"><div className="container"><div className="final-cta-frame"><Eyebrow>Ready to work on your game?</Eyebrow><h2>BOOK A SESSION<br/>WITH JOHN NICHOLSON.</h2><ArrowLink to="/book-snooker-coaching">Book coaching</ArrowLink></div></div></section>
   </PageShell>; }
