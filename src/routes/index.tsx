@@ -76,7 +76,24 @@ function HomePage() { return <PageShell>
   <section className="section section-raised"><div className="container"><div className="section-heading"><Eyebrow>Coaching disciplines</Eyebrow><h2>BUILD A MORE<br/>COMPLETE GAME.</h2></div><div className="discipline-grid">{disciplines.map(([n,t,d]) => <article key={n}><span>{n}</span><h3>{t}</h3><p>{d}</p><ArrowRight size={18}/></article>)}</div></div></section>
   <section className="cinematic-break"><div className="cinematic-portrait"><img src={portrait} alt="John Nicholson with the complete JN Snooker identity" width="1000" height="1000" loading="lazy" decoding="async"/></div><div className="cinematic-copy"><Eyebrow>The standard</Eyebrow><p className="cinematic-word">CONTROL.</p><p className="cinematic-word cinematic-word-accent">CLARITY.</p><p className="cinematic-word">COMMITMENT.</p><span>Focused coaching. Repeatable improvement.</span></div></section>
   <section className="section"><div className="container"><div className="section-heading"><Eyebrow>Player development</Eyebrow><h2 className="stack-heading">COACHING<br/>BUILT<br/>AROUND<br/>YOUR<br/><span>GAME.</span></h2></div><div className="player-list">{players.map(([title,copy],i)=><Link key={title} to="/snooker-coaching"><span>0{i+1}</span><h3>{title}</h3><p>{copy}</p><ArrowRight/></Link>)}</div></div></section>
-  <section className="coach-feature"><div className="container coach-editorial"><div className="coach-identity"><Eyebrow>Your coach</Eyebrow><h2>JOHN<br/><span>NICHOLSON</span></h2></div><div className="coach-copy"><img className="coach-logo" src={logo} alt="JN Snooker — John Nicholson Snooker Coaching" width="900" height="600" loading="lazy" decoding="async"/><p>John's coaching philosophy is straightforward: understand the player first, identify what is holding the game back, then create practical adjustments that can be repeated away from the coaching session.</p><p>The goal is to make improvement understandable, measurable and repeatable.</p><ArrowLink to="/about-john">Meet John</ArrowLink></div></div></section>
+  <section className="coach-feature">
+    <div className="coach-feature-bg" aria-hidden="true">
+      <img src={heroHd} alt="" width="1440" height="810" loading="lazy" decoding="async" />
+    </div>
+    <div className="container coach-editorial">
+      <div className="coach-identity">
+        <Eyebrow>Your coach</Eyebrow>
+        <h2 className="coach-name">JOHN<br/><span>NICHOLSON</span></h2>
+        <img className="coach-logo coach-logo-mobile" src={logo} alt="JN Snooker — John Nicholson Snooker Coaching" width="900" height="600" loading="lazy" decoding="async" />
+      </div>
+      <div className="coach-copy">
+        <img className="coach-logo coach-logo-desktop" src={logo} alt="JN Snooker — John Nicholson Snooker Coaching" width="900" height="600" loading="lazy" decoding="async" />
+        <p>John's coaching philosophy is straightforward: understand the player first, identify what is holding the game back, then create practical adjustments that can be repeated away from the coaching session.</p>
+        <p>The goal is to make improvement understandable, measurable and repeatable.</p>
+        <ArrowLink to="/about-john">Meet John</ArrowLink>
+      </div>
+    </div>
+  </section>
   <section className="section section-raised"><div className="container"><div className="section-heading"><Eyebrow>The session</Eyebrow><h2>A SIMPLE PROCESS.<br/>REAL DEVELOPMENT.</h2></div><div className="process-grid">{processSteps.map(([n,t,d])=><article key={n}><span>{n}</span><h3>{t}</h3><p>{d}</p></article>)}</div></div></section>
   <section className="section"><div className="container"><div className="section-heading compact"><Eyebrow>Areas we can work on</Eyebrow><h2>YOUR GAME.<br/>BROKEN DOWN.</h2></div><div className="area-grid">{coachingAreas.map((area)=><span key={area}>{area}</span>)}</div></div></section>
   <section className="section comparison-section"><div className="container"><div className="comparison-heading"><div><Eyebrow>Why personal coaching</Eyebrow><h2>THE DIFFERENCE IS<br/><span>IN THE DETAIL.</span></h2></div><p>General advice can point you in a direction. One-to-one coaching identifies what is happening in your game and turns it into a practical plan.</p></div><div className="comparison-table-wrap"><table className="comparison-table"><thead><tr><th scope="col">What helps you improve</th><th scope="col">Practising alone</th><th scope="col">General tips</th><th scope="col" className="comparison-featured">1-to-1 coaching</th></tr></thead><tbody>{comparisonRows.map(([label, solo, tips, coaching]) => <tr key={String(label)}><th scope="row">{label}</th>{[solo, tips, coaching].map((included, index) => <td key={index} className={index === 2 ? "comparison-featured" : ""}>{included ? <Check aria-label="Included" size={20}/> : <Minus aria-label="Not included" size={18}/>}</td>)}</tr>)}</tbody></table></div><div className="comparison-action"><p>Focused on your technique, your decisions and your next stage of development.</p><ArrowLink to="/book-snooker-coaching">Book one-to-one coaching</ArrowLink></div></div></section>
