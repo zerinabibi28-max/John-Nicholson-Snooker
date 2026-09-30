@@ -55,10 +55,11 @@ const coachingValues = [
 ];
 
 const faqs = [
-  ["Do I need to be an experienced player?", "No. Coaching is shaped around your current level, from first principles through to competitive match play."],
-  ["What should I bring to a session?", "Bring your cue if you have one, plus a clear idea of the part of your game you most want to improve."],
-  ["Will I get drills to practise afterwards?", "Yes. The aim is to leave with clear, repeatable work you can continue between sessions."],
-  ["Where does coaching take place?", "Sessions are based in Darlington, serving players across County Durham and the wider North East."],
+  ["01", "Is this for competitive players?", "Yes. Sessions are built for players who want clearer technique, smarter decisions and a game that holds up when it matters."],
+  ["02", "Can beginners still book?", "Absolutely. Coaching starts from where you are now — first principles through to match-ready habits."],
+  ["03", "What should I bring?", "Your cue if you have one, and a clear idea of the part of your game you most want to improve."],
+  ["04", "Will I leave with practice?", "Yes. Every session ends with focused, repeatable work you can continue between visits."],
+  ["05", "Where do sessions take place?", "Coaching is based in Darlington, serving players across County Durham and the wider North East."],
 ];
 
 function HomePage() { return <PageShell>
@@ -78,7 +79,31 @@ function HomePage() { return <PageShell>
   <section className="development-band"><div className="container"><div className="development-intro"><Eyebrow>The development cycle</Eyebrow><h2>FROM FIRST LOOK<br/>TO MATCH TABLE.</h2></div><div className="development-track">{coachingValues.map(([title,copy], index) => <article key={title}><span>{String(index + 1).padStart(2,"0")}</span><div><h3>{title}</h3><p>{copy}</p></div></article>)}</div></div></section>
   <section className="session-focus"><div className="container session-focus-grid"><div className="focus-visual"><div className="focus-visual-frame"><img src={logo} alt="JN Snooker — John Nicholson Snooker Coaching" width="900" height="600" loading="lazy" decoding="async"/></div></div><div className="focus-note"><Eyebrow>One table. One player. One plan.</Eyebrow><h2>COACHING<br/><span className="focus-hollow">WITHOUT</span><br/><span>THE NOISE.</span></h2><p>Every session is centred on the part of your game that will create the most useful change now.</p><ul className="focus-list"><li><span className="focus-check"><Check size={14} aria-hidden="true"/></span>Direct observation</li><li><span className="focus-check"><Check size={14} aria-hidden="true"/></span>Simple explanations</li><li><span className="focus-check"><Check size={14} aria-hidden="true"/></span>Repeatable routines</li></ul><span className="focus-rule" aria-hidden="true"/><ArrowLink to="/book-snooker-coaching">Book a session</ArrowLink></div></div></section>
   <section className="media-feature"><div className="media-visual"><img src={hero} alt="Professional snooker coaching with John Nicholson" width="1440" height="480" loading="lazy" decoding="async"/><span className="play-button"><Play fill="currentColor"/></span></div><div className="media-copy"><Eyebrow>Coaching insights</Eyebrow><h2>SEE THE GAME<br/>DIFFERENTLY.</h2><p>Short coaching breakdowns, practice ideas and snooker insights can be added here as John's content library grows.</p><ArrowLink to="/snooker-insights" secondary>View coaching insights</ArrowLink></div></section>
-  <section className="section faq-section"><div className="container faq-layout"><div><Eyebrow>Before you book</Eyebrow><h2>GOOD QUESTIONS.<br/><span>CLEAR ANSWERS.</span></h2></div><div className="faq-list">{faqs.map(([question,answer], index) => <details key={question} open={index === 0}><summary>{question}<ChevronDown size={20}/></summary><p>{answer}</p></details>)}</div></div></section>
+  <section className="championship-faq" aria-labelledby="championship-faq-heading">
+    <div className="container championship-faq-grid">
+      <div className="championship-faq-intro">
+        <Eyebrow>Championship FAQ</Eyebrow>
+        <h2 id="championship-faq-heading">ASKED AT<br/><span>THE TABLE.</span></h2>
+        <p>Clear answers for players who take their game seriously — from first session through competitive play.</p>
+        <div className="championship-faq-mark" aria-hidden="true">
+          <span>JN</span>
+          <span>STANDARD</span>
+        </div>
+      </div>
+      <div className="championship-faq-list">
+        {faqs.map(([num, question, answer], index) => (
+          <details key={question} open={index === 0}>
+            <summary>
+              <span className="faq-num">{num}</span>
+              <span className="faq-q">{question}</span>
+              <ChevronDown size={18} aria-hidden="true" />
+            </summary>
+            <p>{answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
   <section className="principle-strip"><div className="container"><p>Better habits</p><span aria-hidden="true"/><p>Smarter choices</p><span aria-hidden="true"/><p>Stronger match play</p></div></section>
   <section className="section location-section"><div className="container statement-grid"><div><Eyebrow>North East England</Eyebrow><h2>SNOOKER COACHING<br/><span>IN DARLINGTON.</span></h2></div><div className="rich-copy"><p>One-to-one snooker coaching for players in Darlington, County Durham and surrounding areas across the North East.</p><div className="location-links"><span>Darlington</span><span>County Durham</span><span>North East England</span></div></div></div></section>
   <section className="final-cta final-cta-framed"><div className="container"><div className="final-cta-frame"><Eyebrow>Ready to work on your game?</Eyebrow><h2>BOOK A SESSION<br/>WITH JOHN NICHOLSON.</h2><ArrowLink to="/book-snooker-coaching">Book coaching</ArrowLink></div></div></section>
