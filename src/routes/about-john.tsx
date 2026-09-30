@@ -1,0 +1,17 @@
+import { createFileRoute } from "@tanstack/react-router";
+import portrait from "../assets/john-nicholson-portrait.png.asset.json";
+import { ArrowLink, Eyebrow, PageShell } from "../components/site-shell";
+
+export const Route = createFileRoute("/about-john")({ head: () => ({ meta: [
+  { title: "About John Nicholson | Snooker Coach Darlington" }, { name: "description", content: "Meet John Nicholson and discover his practical, player-first approach to snooker coaching in Darlington." },
+  { property: "og:title", content: "About John Nicholson | Snooker Coach Darlington" }, { property: "og:description", content: "A measured, practical coaching approach built around each individual player." },
+  { property: "og:type", content: "profile" }, { name: "twitter:card", content: "summary_large_image" },
+]}), component: AboutPage });
+
+function AboutPage() { return <PageShell>
+  <section className="about-hero"><div className="about-image"><img src={portrait.url} alt="John Nicholson, snooker coach, holding his cue" width="1000" height="1000" decoding="async" /></div><div className="about-title"><Eyebrow>Your coach</Eyebrow><h1>ABOUT<br/><span>JOHN NICHOLSON.</span></h1><p>Clear thinking. Practical adjustments. A game you understand.</p></div></section>
+  <section className="section"><div className="container statement-grid"><div><Eyebrow>The player</Eyebrow><h2>UNDERSTAND<br/>THE PERSON<br/>BEHIND THE CUE.</h2></div><div className="rich-copy"><p>John's coaching philosophy is straightforward: understand the player first, identify what is holding the game back, then create practical adjustments that can be repeated away from the coaching session.</p><p>The goal isn't to overwhelm players with information. It's to make improvement understandable, measurable and repeatable.</p></div></div></section>
+  <section className="section section-raised"><div className="container editorial-chapters">{[["01","The coaching approach","Every session starts with observation. The right adjustment should be clear, relevant and realistic for the player."],["02","Why simple coaching works","A small number of focused ideas are easier to trust at the table and easier to repeat in practice."],["03","Continuous development","Good coaching evolves with the player. Progress is reviewed, refined and turned into the next practical objective."]].map(([n,t,d]) => <article key={n}><span>{n}</span><div><h2>{t}</h2><p>{d}</p></div></article>)}</div></section>
+  <section className="section qualification"><div className="container statement-grid"><div><Eyebrow>Development</Eyebrow><h2>COACHING DEVELOPMENT<br/>& QUALIFICATIONS.</h2></div><div className="rich-copy"><p>John is continuing to develop his snooker coaching knowledge and qualifications. Confirmed coaching badges and certifications will be added here as they are completed.</p><div className="qualification-rule"><span>Future qualifications</span><span>To be confirmed</span></div></div></div></section>
+  <section className="final-cta"><div className="container"><Eyebrow>Personal coaching in Darlington</Eyebrow><h2>LET'S WORK ON<br/>YOUR GAME.</h2><ArrowLink to="/book-snooker-coaching">Book a coaching session</ArrowLink></div></section>
+  </PageShell>; }
